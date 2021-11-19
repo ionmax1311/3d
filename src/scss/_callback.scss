@@ -1,0 +1,104 @@
+.callback {
+  margin-top: 190px;
+  @media (max-width: 992px) {
+    margin-top: 150px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 120px;
+  }
+  &__wrap {
+    background: #2c2c2c;
+    border-radius: 12px;
+    padding: 70px 30px 80px;
+    @media (max-width: 567px) {
+      padding: 45px 25px 65px;
+    }
+  }
+  &__title {
+    color: #fff;
+    max-width: 1016px;
+    margin: auto;
+    span {
+      color: #9f9f9f;
+    }
+  }
+  &__form {
+    width: 600px;
+    background: #4d4d4d;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin: 80px auto 0;
+    height: 85px;
+    align-items: center;
+    &__phone {
+      display: flex;
+      align-items: baseline;
+      margin-left: 23px;
+      color: #000;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0em;
+      text-align: left;
+      line-height: 30px;
+      span {
+        display: block;
+        margin-right: 10px;
+      }
+    }
+    input {
+      font-family: "TTFirsNeueRegular", sans-serif;
+      width: 240px;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid #e3e3e3;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0em;
+      text-align: left;
+      line-height: 30px;
+      color: #fff;
+      @media (max-width: 1200px) {
+        width: 195px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      margin-top: 50px;
+      height: 65px;
+      width: 535px;
+    }
+    @media (max-width: 767px) {
+      height: auto;
+      flex-direction: column;
+      width: 100%;
+      max-width: 320px;
+      margin: 30px auto 0;
+      padding: 25px;
+    }
+    @media (max-width: 567px) {
+      padding: 17px;
+    }
+    &-phone {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 38px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #fff;
+      margin-left: 23px;
+      @media (max-width: 767px) {
+        margin-left: 0;
+      }
+    }
+  }
+  #callback-btn {
+    @media (max-width: 767px) {
+      margin: 20px auto 0;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<div class="calculate">
+    <div class="container">
+        <div class="calculate__wrap">
+            <h2 class="calculate__title">
+                Рассчитать стоимость печати
+            </h2>
+            <div class="calculate__content calculate-1">
+                <div class="calculate-1__left">
+                    <div class="calculate__content-title-wrap">
+                        <span class="calculate__content-title">Выберите тип печати</span>
+                        <div class="question-wrap" data-toggle="tooltip" data-placement="top" title="Some text">
+                            <img src="img/icon-question.svg" alt="question">
+                        </div>
+
+                    </div>
+
+                    <div class="calculate__type">
+                        <button class="btn calculate__type-btn-f">
+                            FDM
+                        </button>
+                        <button class="btn calculate__type-btn-s">
+                            SLA
+                        </button>
+                    </div>
+                </div>
+                <div class="calculate-1__right">
+                    <span class="calculate__content-title">Загрузите файл для просчета</span>
+                    <div class="input-file-wrap fileUploadInput attachments">
+                        <input class="upload input-file" id="file" required="true" type="file" accept=".stl,.obj" name="attachment[]">
+                        <label tabindex="0" for="file" class="btn-file"><img class="img-folder" src="img/icon-folder.png" alt="folder"> Выберите файл </label>
+                        <p class="file-return"></p>
+                        <span class="text-file">Кликните и добавьте файл. Или просто перетяните файл сюда. Файлы STL,
+                            OBJ | до 10 Мб</span>
+                        <img class="img-file" src="img/icon-file.svg" alt="icon">
+                    </div>
+                    <div class="calculate__link-wrap">
+                        <img src="img/icon-link.svg" alt="link">
+                        <!-- <div class="text-link">Или вставьте ссылку на онлайн диск (Google Диск, DropBox, Mega, Fex и
+                            другие)</div> -->
+                        <input class="input-link" type="text" placeholder="Или вставьте ссылку на онлайн диск (Google Диск, DropBox, Mega, Fex и другие)">
+                    </div>
+                </div>
+
+            </div>
+            <div class="calculate__footer">
+                <div class="step-wrap">
+                    <span class="step-text">Шаг 1/3</span>
+                    <img src="img/icon-step-1.svg" alt="icon">
+                </div>
+                <div class="calculate__footer-button-wrap">
+                    <button class="btn calculate__prev">Назад</button>
+                    <button class="btn calculate__next">Далее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

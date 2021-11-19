@@ -1,0 +1,100 @@
+.print {
+  margin-top: 200px;
+  &__title {
+    text-align: left;
+  }
+  @media (max-width: 992px) {
+    margin-top: 150px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 120px;
+  }
+  img {
+    width: auto;
+  }
+  &__wrap {
+    margin-top: 80px;
+    display: flex;
+    gap: 60px 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media (max-width: 567px) {
+      margin-top: 50px;
+    }
+  }
+  &__item {
+    border-radius: 12px;
+    background: #f4f4f4;
+    position: relative;
+    height: 141px;
+    max-width: 360px;
+    width: 100%;
+    &-title {
+      font-family: "TTFirsNeueMedium", sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #000;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 25px;
+      width: 215px;
+      @media (max-width: 567px) {
+        width: 189px;
+        font-size: 21px;
+      }
+    }
+    img {
+      position: absolute;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+    &:nth-child(1) img {
+      right: 40px;
+      bottom: 24px;
+    }
+    &:nth-child(2) img {
+      right: 47px;
+      bottom: 20px;
+    }
+    &:nth-child(3) img {
+      right: 44px;
+      bottom: 26px;
+    }
+    &:nth-child(4) img {
+      bottom: 32px;
+      right: -8px;
+    }
+    &:nth-child(5) img {
+      right: 1px;
+      bottom: 11px;
+    }
+    &:nth-child(6) img {
+      bottom: 23px;
+      right: 38px;
+    }
+    &:nth-child(7) img {
+      right: 62px;
+      bottom: 12px;
+    }
+    &:nth-child(8) img {
+      right: 46px;
+      bottom: 36px;
+    }
+    &:nth-child(9) img {
+      right: -16px;
+      bottom: 19px;
+    }
+    @media (max-width: 1200px) {
+      max-width: 450px;
+    }
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+  }
+}

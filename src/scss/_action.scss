@@ -1,0 +1,136 @@
+.action {
+  margin-top: 200px;
+  &-10 {
+    &-hand {
+      @media (max-width: 992px) {
+        bottom: -30px;
+      }
+    }
+    &__wrap {
+      padding-right: 120px !important;
+      @media (max-width: 992px) {
+        padding-right: 17px !important;
+      }
+      @media (max-width: 480px) {
+        padding-left: 40px !important;
+      }
+    }
+  }
+  &-like-sm {
+    width: 86px;
+    position: absolute;
+    top: -40px;
+    right: 285px;
+    @media (max-width: 992px) {
+      width: 70px;
+      right: 130px;
+    }
+    @media (max-width: 567px) {
+      right: 23px;
+    }
+  }
+  &-like-lg {
+    width: 124px;
+    position: absolute;
+    bottom: 30px;
+    left: 140px;
+    @media (max-width: 992px) {
+      width: 100px;
+      bottom: 0;
+      left: 110px;
+    }
+    @media (max-width: 567px) {
+      left: -8px;
+      bottom: -12px;
+      width: 82px;
+    }
+  }
+  &-smile {
+    width: 179px;
+    position: absolute;
+    right: 10px;
+    bottom: -69px;
+    @media (max-width: 992px) {
+      width: 115px;
+      bottom: -47px;
+    }
+    @media (max-width: 480px) {
+      width: 90px;
+    }
+  }
+  &__wrap {
+    background: #2c2c2c;
+    padding: 72px 136px 72px 400px;
+    border-radius: 12px;
+    position: relative;
+    @media (max-width: 1200px) {
+      padding-left: 265px;
+    }
+    @media (max-width: 992px) {
+      padding: 40px 40px 40px 302px;
+    }
+    @media (max-width: 767px) {
+      padding-left: 210px;
+    }
+    @media (max-width: 567px) {
+      padding-left: 100px;
+    }
+    @media (max-width: 480px) {
+      padding-left: 60px;
+    }
+  }
+  &__text {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: "TTFirsNeueMedium", sans-serif;
+    color: #9f9f9f;
+    max-width: 634px;
+    span {
+      color: #fff;
+    }
+    @media (max-width: 992px) {
+      font-size: 27px;
+      line-height: 32px;
+      max-width: 361px;
+    }
+    @media (max-width: 567px) {
+      font-size: 20px;
+      line-height: 27px;
+      max-width: 325px;
+    }
+  }
+  &-percent {
+    text-transform: uppercase;
+    font-family: "TTFirsNeueMedium", sans-serif;
+    font-size: 160px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 206px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $accent-color;
+    position: absolute;
+    top: -70px;
+    left: -40px;
+    transform: rotate(-7deg);
+    @media (max-width: 992px) {
+      font-size: 90px;
+      top: -95px;
+      left: -13px;
+    }
+    @media (max-width: 567px) {
+      font-size: 68px;
+    }
+  }
+  @media (max-width: 992px) {
+    margin-top: 150px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 120px;
+  }
+}

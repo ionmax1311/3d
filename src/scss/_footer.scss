@@ -1,0 +1,88 @@
+.footer {
+  margin-top: 200px;
+  margin-bottom: 56px;
+  @media (max-width: 992px) {
+    margin-top: 150px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 120px;
+  }
+  img {
+    width: auto;
+  }
+  &__logo {
+    &-text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      margin-left: 15px;
+      color: #9f9f9f;
+    }
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // @media (max-width: 992px) {
+    //   flex-direction: column-reverse;
+    // }
+  }
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // img {
+    //   width: 32px;
+    // }
+  }
+  .fab {
+    background: #2c2c2c;
+    color: $accent-color;
+    padding: 8px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    margin-right: 45px;
+  }
+  &__phone-link {
+    color: $text-color;
+    line-height: 26px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    img {
+      margin-right: 10px;
+    }
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  .btn-calc-footer {
+    width: 209px;
+    height: 51px;
+    outline: 0;
+    background: #ffffff;
+    border: 2px solid #9a9a9a;
+    box-sizing: border-box;
+    border-radius: 8px;
+    position: relative;
+    font-family: "TTFirsNeueMedium", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #2c2c2c;
+    padding-left: 36px;
+    box-shadow: 9px 16px 16px -6px rgba(154, 154, 154, 0.31) !important;
+    img {
+      width: 40px;
+      position: absolute;
+      top: -12px;
+      left: 8px;
+    }
+    &:hover {
+      box-shadow: none !important;
+    }
+  }
+}

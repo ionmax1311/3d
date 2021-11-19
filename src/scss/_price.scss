@@ -1,0 +1,158 @@
+.price {
+  margin-top: 200px;
+  .container {
+    position: relative;
+  }
+  @media (max-width: 992px) {
+    margin-top: 150px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 120px;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 970px;
+    margin: 60px auto 0;
+    gap: 0 30px;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    background: #fff;
+    text-align: center;
+    position: relative;
+    max-width: 470px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 50px 49px;
+    border: 2px solid #f4f4f4;
+    box-sizing: border-box;
+    &-title {
+      font-family: "TTFirsNeueMedium", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 64px;
+      text-align: center;
+      color: $accent-color;
+      display: block;
+      &-wrap {
+        position: absolute;
+        transform: translateX(-50%);
+        width: 209px;
+        height: 87px;
+        left: 50%;
+        top: -50px;
+        background: #ffffff;
+        box-shadow: 12px 12px 31px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      margin: 30px auto 70px;
+    }
+    &:nth-child(2) {
+      @media (max-width: 992px) {
+        margin-bottom: 0;
+      }
+    }
+    &-text-primary {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: $text-color;
+      opacity: 0.5;
+      display: block;
+      margin-bottom: 10px;
+    }
+    &-text {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0em;
+      margin-bottom: 20px;
+      display: block;
+    }
+    &-footer {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      color: $text-color;
+      opacity: 0.5;
+    }
+    ul li {
+      font-family: "TTFirsNeueBold", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: #2c2c2c;
+      margin-bottom: 10px;
+    }
+  }
+  .btn-calc-price {
+    width: 270px;
+    height: 66px;
+    position: relative;
+    img {
+      width: 52px;
+      position: absolute;
+      transform: translateY(-50%);
+      left: 11px;
+      top: 22%;
+    }
+    @media (max-width: 767px) {
+      margin-top: 50px;
+    }
+  }
+  &__btn {
+    width: 270px;
+    height: 66px;
+  }
+  &__button-wrap {
+    display: flex;
+    margin-top: 45px;
+    justify-content: center;
+    align-items: center;
+    gap: 0 30px;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+  &__text-bg {
+    font-family: "TTFirsNeueMedium", sans-serif;
+    font-size: 144px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 158px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #f4f4f4;
+    position: absolute;
+    z-index: -1;
+    &-bottom {
+      right: 0;
+      bottom: 0;
+      @media (max-width: 767px) {
+        bottom: 85px;
+      }
+    }
+    &-top {
+      @media (max-width: 767px) {
+        top: 41px;
+      }
+      @media (max-width: 567px) {
+        top: 8px;
+      }
+    }
+    @media (max-width: 567px) {
+      font-size: 90px;
+    }
+  }
+}

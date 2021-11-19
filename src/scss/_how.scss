@@ -1,0 +1,121 @@
+.how {
+  margin-top: 150px;
+  &__title {
+    text-align: center;
+  }
+  img {
+    position: absolute;
+  }
+  &-img-1 {
+    width: 204px;
+    top: -100px;
+    right: 57px;
+    @media (max-width: 567px) {
+      width: 155px;
+      top: -100px;
+      right: 21px;
+    }
+  }
+  &-img-2 {
+    width: 158px;
+    top: -114px;
+    right: 57px;
+    @media (max-width: 567px) {
+      width: 132px;
+      right: 21px;
+    }
+  }
+  &__item {
+    position: relative;
+    max-width: 470px;
+    background: #f4f4f4;
+    border-radius: 12px;
+    padding: 50px 70px;
+    &-title {
+      font-family: "TTFirsNeueMedium", sans-serif;
+      position: absolute;
+      transform: translateX(-50%);
+      top: -35px;
+      font-size: 64px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 70px;
+      letter-spacing: 0em;
+      text-align: center;
+      color: $accent-color;
+      &-1 {
+        left: 44%;
+        @media (max-width: 567px) {
+          left: 33%;
+        }
+      }
+      &-2 {
+        left: 47%;
+        @media (max-width: 567px) {
+          left: 44%;
+        }
+      }
+    }
+    &-subtitle {
+      font-family: "TTFirsNeueMedium", sans-serif;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin-bottom: 27px;
+      display: block;
+      color: #000;
+    }
+    &:nth-child(1) {
+      margin-right: 10px;
+      @media (max-width: 992px) {
+        margin: 30px auto 180px;
+      }
+    }
+    &:nth-child(2) {
+      margin-left: 10px;
+      @media (max-width: 992px) {
+        margin-left: auto;
+      }
+    }
+    @media (max-width: 992px) {
+      margin: auto;
+    }
+    @media (max-width: 567px) {
+      padding: 50px 40px 30px;
+    }
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 970px;
+    margin: 125px auto 0;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+  &__list {
+    li {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: $text-color;
+      background-image: url(img/icon-check.svg);
+      background-repeat: no-repeat;
+      background-size: 21px 21px;
+      padding-left: 38px;
+      margin-bottom: 15px;
+    }
+  }
+  @media (max-width: 992px) {
+    margin-top: 70px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 30px;
+  }
+}

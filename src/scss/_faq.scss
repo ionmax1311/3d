@@ -1,0 +1,125 @@
+.faq {
+  margin-top: 200px;
+  @media (max-width: 992px) {
+    margin-top: 150px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 120px;
+  }
+  img {
+    width: auto;
+    display: block;
+  }
+  &__wrap {
+    display: flex;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+  &__title {
+    text-align: left;
+  }
+  &__right {
+    width: 100%;
+    border-bottom: 2px solid #e2e2e2;
+    margin-top: 50px;
+    height: fit-content;
+  }
+  &__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 2px solid #e2e2e2;
+    padding: 25px 0 25px 40px;
+    cursor: pointer;
+    h3 {
+      font-family: "TTFirsNeueBold", sans-serif;
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 25px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #222;
+      transition: 0.3s;
+      @media (max-width: 567px) {
+        font-size: 17px;
+      }
+    }
+    &:hover h3 {
+      color: $accent-color;
+    }
+    &.is-active h3 {
+      color: $accent-color;
+    }
+    &.is-active .faq__toggle {
+      transform: rotate(180deg);
+    }
+    // &.is-active .faq__number {
+    //   color: #000;
+    // }
+    .faq__toggle {
+      transition: 0.3s;
+    }
+    // &-last {
+    //   border-bottom: 2px solid #e2e2e2;
+    // }
+    @media (max-width: 567px) {
+      padding: 15px 0 15px 40px;
+    }
+  }
+  &__body {
+    display: none;
+
+    transition: 0.3s;
+    p {
+      margin-left: 60px;
+      margin-bottom: 25px;
+      font-size: 16px;
+      font-style: normal;
+      line-height: 26px;
+      letter-spacing: 0;
+      color: $text-color;
+      text-align: left;
+    }
+    &.is-active {
+      display: block;
+    }
+  }
+  &__number {
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $accent-color;
+    position: absolute;
+    left: 0;
+    top: 15px;
+  }
+  &__print-img {
+    margin-left: 90px;
+  }
+  &__print-3d {
+    margin-top: 50px;
+  }
+  &__img-wrap {
+    @media (max-width: 992px) {
+      position: absolute;
+      z-index: -1;
+      max-width: 250px;
+      transform: translateX(-50%);
+      left: 50%;
+    }
+    @media (max-width: 567px) {
+      left: 35%;
+    }
+    img {
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+    }
+  }
+}

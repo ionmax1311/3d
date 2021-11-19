@@ -1,0 +1,230 @@
+.hero {
+  &__btn {
+    width: 226px;
+    height: 66px;
+    margin-right: 10px;
+    @media (max-width: 567px) {
+      margin: 20px auto 0;
+      width: 100%;
+    }
+  }
+  &__title {
+    max-width: 520px;
+  }
+  &__subtitle {
+    max-width: 346px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 26px;
+    color: $text-color;
+    display: block;
+    margin-top: 10px;
+    margin-left: 70px;
+    font-family: "TTFirsNeueMedium", sans-serif;
+    @media (max-width: 1200px) {
+      margin-left: 50px;
+    }
+    @media (max-width: 567px) {
+      margin-left: 30px;
+    }
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+  &__left {
+    margin-top: 70px;
+    @media (max-width: 1200px) {
+      margin-top: 15px;
+    }
+    @media (max-width: 992px) {
+      max-width: 490px;
+      margin: auto;
+    }
+  }
+  &__right {
+    width: 100%;
+    max-width: 582px;
+    margin-right: -50px;
+    &-img-wrap {
+      position: relative;
+      height: 100%;
+      @media (max-width: 992px) {
+        height: 350px;
+      }
+      @media (max-width: 567px) {
+        height: 300px;
+      }
+    }
+    @media (max-width: 1200px) {
+      margin-left: 50px;
+    }
+    @media (max-width: 992px) {
+      margin-left: 0;
+      max-width: 100%;
+    }
+  }
+  .img-printer {
+    width: 348px;
+    position: absolute;
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+    bottom: 90px;
+    @media (max-width: 1200px) {
+      width: 215px;
+      bottom: 81px;
+    }
+    @media (max-width: 567px) {
+      width: 185px;
+    }
+  }
+  .img-setka {
+    width: 582px;
+    position: absolute;
+    bottom: 40px;
+    @media (max-width: 1200px) {
+      width: 415px;
+      bottom: 40px;
+    }
+    @media (max-width: 992px) {
+      transform: translateX(-50%);
+      left: 50%;
+    }
+    @media (max-width: 567px) {
+      width: 330px;
+    }
+  }
+  .btn-calc-hero {
+    width: 300px;
+    height: 66px;
+    position: absolute;
+    bottom: 10px;
+    transform: translateX(-50%);
+    left: 50%;
+    img {
+      width: 52px;
+      position: absolute;
+      transform: translateY(-50%);
+      left: 11px;
+      top: 22%;
+      @media (max-width: 992px) {
+        width: 35px;
+      }
+    }
+    @media (max-width: 992px) {
+      bottom: 20px;
+    }
+  }
+  .callback {
+    width: 580px;
+    background: #f4f4f4;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    height: 85px;
+    align-items: center;
+    &__phone {
+      display: flex;
+      align-items: baseline;
+      margin-left: 23px;
+      color: #000;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0em;
+      text-align: left;
+      line-height: 30px;
+      span {
+        display: block;
+        margin-right: 10px;
+      }
+    }
+    input {
+      font-family: "TTFirsNeueRegular", sans-serif;
+      width: 215px;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid #e3e3e3;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0em;
+      text-align: left;
+      line-height: 30px;
+      @media (max-width: 1200px) {
+        width: 195px;
+        margin-right: 10px;
+      }
+    }
+    @media (max-width: 1200px) {
+      width: 490px;
+      margin-top: 30px;
+    }
+    @media (max-width: 992px) {
+      height: 65px;
+    }
+    @media (max-width: 567px) {
+      height: auto;
+      flex-direction: column;
+      width: 100%;
+      max-width: 320px;
+      margin: 30px auto 0;
+      padding: 25px;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    img {
+      width: 43px;
+    }
+    li {
+      width: 352px;
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 45px;
+    }
+    &-wrap {
+      margin-top: 65px;
+    }
+    &-text {
+      color: $text-color;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 29px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    &-number {
+      color: #e3e3e3;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: left;
+      position: absolute;
+      top: -10px;
+      left: 0;
+    }
+    &:nth-child(1) {
+      margin-bottom: 30px;
+    }
+    @media (max-width: 1200px) {
+      margin: auto;
+      max-width: 704px;
+    }
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+  }
+}
