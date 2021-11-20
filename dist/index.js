@@ -9,6 +9,19 @@ $(".faq__header").click(function (e) {
   }
 });
 
+if ($(".calculate-1").hasClass("active")) {
+	$(".step-img").attr("src", "img/icon-step-1.svg");
+	$(".step-text").text("Шаг 1/3");
+}
+if ($(".calculate-2").hasClass("active")) {
+	$(".step-img").attr("src", "img/icon-step-2.svg");
+	$(".step-text").text("Шаг 2/3");
+}
+if ($(".calculate-3").hasClass("active")) {
+	$(".step-img").attr("src", "img/icon-step-3.svg");
+	$(".step-text").text("Шаг 3/3");
+}
+
 var fileInput = document.querySelector(".input-file"),
   button = document.querySelector(".btn-file"),
   the_return = document.querySelector(".file-return"),
@@ -50,60 +63,97 @@ fileInput.addEventListener("dragleave", function () {
 
 $(".question-wrap").tooltip();
 
+$(".calculate-scroll").click(function () {
+	$("html, body").animate(
+		{
+			scrollTop: $(".calculate").offset().top - 100,
+		},
+		1000,
+	);
+});
+
+$(".what-scroll").click(function () {
+	$("html, body").animate(
+		{
+			scrollTop: $(".print").offset().top - 100,
+		},
+		1000,
+	);
+});
+
+$(".how-scroll").click(function () {
+	$("html, body").animate(
+		{
+			scrollTop: $(".how").offset().top - 100,
+		},
+		1000,
+	);
+});
+
+$(".logo").click(function () {
+	$("html, body").animate(
+		{
+			scrollTop: $(".top").offset().top - 50,
+		},
+		1000,
+	);
+});
+
 // Portfolio slider
 
 $(".portfolio__slider").slick({
-  centerMode: true,
-  centerPadding: "150px",
-  slidesToShow: 4,
-  appendArrows: $(".portfolio-arrow"),
-  prevArrow:
-    '<button id="prevPortfolio" type="button" class="btn-slider-portfolio"><i class="fa fa-chevron-left" aria-hidden="true"></i> </button>',
-  nextArrow:
-    '<button id="nextPortfolio" type="button" class="btn-slider-portfolio"> <i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        centerMode: true,
-        centerPadding: "60px",
-        slidesToShow: 3,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        centerMode: true,
-        centerPadding: "60px",
-        slidesToShow: 2,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        centerMode: true,
-        centerPadding: "30px",
-        slidesToShow: 1,
-      },
-    },
-  ],
+	centerMode: true,
+	centerPadding: "150px",
+	slidesToShow: 4,
+	appendArrows: $(".portfolio-arrow"),
+	prevArrow:
+		'<button id="prevPortfolio" type="button" class="btn-slider-portfolio"><i class="fa fa-chevron-left" aria-hidden="true"></i> </button>',
+	nextArrow:
+		'<button id="nextPortfolio" type="button" class="btn-slider-portfolio"> <i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
+	responsive: [
+		{
+			breakpoint: 1200,
+			settings: {
+				centerMode: true,
+				centerPadding: "60px",
+				slidesToShow: 3,
+			},
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				centerMode: true,
+				centerPadding: "60px",
+				slidesToShow: 2,
+			},
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				centerMode: true,
+				centerPadding: "30px",
+				slidesToShow: 1,
+			},
+		},
+	],
 });
 
 // Models's slider
 var $carousel = $(".models__slider-for");
 
 $carousel.slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-  fade: true,
-  accessibility: false,
-  // asNavFor: ".models__slider-nav",
-  // appendArrows: $(".models-arrow"),
-  prevArrow:
-    '<button id="prevModels" type="button" class="btn-slider-models"><i class="fa fa-chevron-left" aria-hidden="true"></i> </button>',
-  nextArrow:
-    '<button id="nextModels" type="button" class="btn-slider-models"> <i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: true,
+	fade: true,
+	accessibility: false,
+	infinite: false,
+	// asNavFor: ".models__slider-nav",
+	// appendArrows: $(".models-arrow"),
+	prevArrow:
+		'<button id="prevModels" type="button" class="btn-slider-models"><i class="fa fa-chevron-left" aria-hidden="true"></i> </button>',
+	nextArrow:
+		'<button id="nextModels" type="button" class="btn-slider-models"> <i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
 });
 
 // $(".models__slider-nav").slick({
@@ -121,38 +171,46 @@ $carousel.slick({
 // });
 
 $(".models-item").click(function (e) {
-  e.preventDefault();
-  var slideno = $(this).data("slide");
-  $(".models__slider-for").slick("slickGoTo", slideno - 1);
+	e.preventDefault();
+	var slideno = $(this).data("slide");
+	$(".models__slider-for").slick("slickGoTo", slideno - 1);
 
-  $(".models-item").removeClass("active");
-  $(this).addClass("active");
+	$(".models-item").removeClass("active");
+	$(this).addClass("active");
 });
 
-// $("#nextModels").click(function (e) {
-//   e.preventDefault();
-//   // var slideno = $(this).data("slide");
-//   // $(".models__slider-for").slick("slickGoTo", slideno - 1);
-//   console.log();
+$("#nextModels").click(function (e) {
+	e.preventDefault();
 
-//     $(".models-item.active").next(".models-item").addClass("active");
-//     $(".models-item.active").prev(".models-item").removeClass("active");
+	$(".models-item.active").next(".models-item").addClass("active");
+	$(".models-item.active").prev(".models-item").removeClass("active");
+});
 
-// });
+$("#prevModels").click(function (e) {
+	e.preventDefault();
 
-// $("#prevModels").click(function (e) {
-//   e.preventDefault();
-//   // var slideno = $(this).data("slide");
-//   // $(".models__slider-for").slick("slickGoTo", slideno - 1);
-//   console.log();
+	$(".models-item.active").prev(".models-item").addClass("active");
+	$(".models-item.active").next(".models-item").removeClass("active");
 
-//     $(".models-item.active").prev(".models-item").addClass("active");
-//     $(".models-item.active").prev(".models-item").removeClass("active");
+	console.log($(".models-item.active").data("slide"));
+});
 
-// });
+$carousel.on("afterChange", function () {
+	var dataId = $(".models__slider-for .slick-current").attr(
+		"data-slick-index",
+	);
 
-// $carousel.on("afterChange", function () {
-//   var dataId = $(".models__slider-for .slick-current").attr("data-slick-index");
-//   console.log("dataId---", dataId);
+	console.log("dataId---", dataId);
+	console.log("data---", $(".models-item").data("slide"));
+	// if (($(".models-item").data("slide").indexOf('4289') > -1){
 
-// });
+	// }
+});
+
+$(window).scroll(function () {
+	if ($(window).scrollTop() >= 300) {
+		$(".header").addClass("sticky");
+	} else {
+		$(".header").removeClass("sticky");
+	}
+});
