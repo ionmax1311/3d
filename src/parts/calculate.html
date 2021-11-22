@@ -6,85 +6,56 @@
 				<div class="calculate__content-wrap">
 					<div class="calculate-1__left">
 						<div class="calculate__content-title-wrap">
-							<span class="calculate__content-title"
-								>Выберите тип печати</span
-							>
-							<div
-								class="question-wrap"
-								data-toggle="tooltip"
-								data-placement="top"
-								title="Some text"
-							>
-								<img
-									src="img/icon-question.svg"
-									alt="question"
-								/>
+							<span class="calculate__content-title">Выберите тип печати</span>
+							<div class="question-wrap" data-toggle="tooltip" data-placement="top" title="Some text">
+								<img src="img/icon-question.svg" alt="question" />
 							</div>
 						</div>
 
 						<div class="calculate__type">
-							<button class="btn calculate__type-btn-f btn-type">
+							<button class="btn calculate__type-btn-f btn-type" data-type="FDM">
 								FDM
 							</button>
-							<button class="btn calculate__type-btn-s btn-type">
+							<button class="btn calculate__type-btn-s btn-type" data-type="SLA">
 								SLA
 							</button>
+							<span class="error-type error">Выберите тип печати</span>
 						</div>
 					</div>
 					<div class="calculate-1__right">
-						<span class="calculate__content-title"
-							>Загрузите файл для просчета</span
-						>
-						<div
-							class="input-file-wrap fileUploadInput attachments"
-						>
-							<input
-								class="upload input-file"
-								id="file"
-								required="true"
-								type="file"
-								accept=".stl,.obj"
-								name="attachment[]"
-							/>
-							<label tabindex="0" for="file" class="btn-file"
-								><img
-									class="img-folder"
-									src="img/icon-folder.png"
-									alt="folder"
-								/>
-								Выберите файл
-							</label>
-							<p class="file-return"></p>
-							<span class="text-file"
-								>Кликните и добавьте файл. Или просто перетяните
-								файл сюда. Файлы STL, OBJ | до 10 Мб</span
-							>
-							<img
-								class="img-file"
-								src="img/icon-file.svg"
-								alt="icon"
-							/>
-						</div>
-						<div class="calculate__link-wrap">
-							<img src="img/icon-link.svg" alt="link" />
-							<!-- <div class="text-link">Или вставьте ссылку на онлайн диск (Google Диск, DropBox, Mega, Fex и
+						<span class="calculate__content-title">Загрузите файл для просчета</span>
+						<form action="php/process.php" enctype="multipart/form-data" id="calculate-form">
+							<div class="input-file-wrap fileUploadInput attachments">
+								<input class="upload input-file " id="file" required="true" type="file"
+									accept=".stl,.obj" name="attachment[]" />
+								<label tabindex="0" for="file" class="btn-file"><img class="img-folder"
+										src="img/icon-folder.png" alt="folder" />
+									Выберите файл
+								</label>
+								<p class="file-return"></p>
+								<span class="text-file">Кликните и добавьте файл. Или просто перетяните
+									файл сюда. Файлы STL, OBJ | до 10 Мб</span>
+								<img class="img-file" src="img/icon-file.svg" alt="icon" />
+							</div>
+							<div class="calculate__link-wrap">
+								<img src="img/icon-link.svg" alt="link" />
+								<!-- <div class="text-link">Или вставьте ссылку на онлайн диск (Google Диск, DropBox, Mega, Fex и
                             другие)</div> -->
-							<input
-								class="input-link"
-								type="text"
-								placeholder="Или вставьте ссылку на онлайн диск (Google Диск, DropBox, Mega, Fex и другие)"
-							/>
-						</div>
+								<input class="input-link" type="text"
+									placeholder="Или вставьте ссылку на онлайн диск (Google Диск, DropBox, Mega, Fex и другие)" />
+							</div>
+							<input type="hidden" name="type" class="type-val">
+							<input type="hidden" name="selectMaterial" class="selectMaterial-val">
+							<input type="hidden" name="selectColor" class="selectColor-val">
+							<input type="hidden" name="selectQuality" class="selectQuality-val">
+						</form>
+						<span class="error-file error">Загрузите файл или ссылку</span>
 					</div>
 				</div>
 				<div class="calculate__footer">
 					<div class="step-wrap">
 						<span class="step-text">Шаг 1/3</span>
-						<img
-							class="step-img"
-							src="img/icon-step-1.svg"
-							alt="icon"
-						/>
+						<img class="step-img" src="img/icon-step-1.svg" alt="icon" />
 					</div>
 					<div class="calculate__footer-button-wrap">
 						<button class="btn calculate__prev calculate__prev-1">
@@ -101,24 +72,14 @@
 				<div class="calculate-2__wrap">
 					<div class="calculate-2__item">
 						<div class="calculate__content-title-wrap">
-							<span class="calculate__content-title"
-								>Выберите Материал печати</span
-							>
-							<div
-								class="question-wrap"
-								data-toggle="tooltip"
-								data-placement="top"
-								title=""
-								data-original-title="Some text"
-							>
-								<img
-									src="img/icon-question.svg"
-									alt="question"
-								/>
+							<span class="calculate__content-title">Выберите Материал печати</span>
+							<div class="question-wrap" data-toggle="tooltip" data-placement="top" title=""
+								data-original-title="Some text">
+								<img src="img/icon-question.svg" alt="question" />
 							</div>
 						</div>
 						<div class="select">
-							<select>
+							<select class="select-material">
 								<option selected="selected" value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -127,43 +88,30 @@
 					</div>
 					<div class="calculate-2__item">
 						<div class="calculate__content-title-wrap">
-							<span class="calculate__content-title"
-								>Выберите цвет материала</span
-							>
+							<span class="calculate__content-title">Выберите цвет материала</span>
 						</div>
 						<div class="select">
-							<select>
-								<option selected="selected" value="1">
+							<select class="select-color">
+								<option selected="selected" value="Красный">
 									Красный
 								</option>
-								<option value="2">Синий</option>
-								<option value="3">Розовый</option>
+								<option value="Синий">Синий</option>
+								<option value="Розовый">Розовый</option>
 							</select>
 						</div>
 					</div>
 					<div class="calculate-2__item">
 						<div class="calculate__content-title-wrap">
-							<span class="calculate__content-title"
-								>Выберите качество печати</span
-							>
-							<div
-								class="question-wrap"
-								data-toggle="tooltip"
-								data-placement="top"
-								title=""
-								data-original-title="Some text"
-							>
-								<img
-									src="img/icon-question.svg"
-									alt="question"
-								/>
+							<span class="calculate__content-title">Выберите качество печати</span>
+							<div class="question-wrap" data-toggle="tooltip" data-placement="top" title=""
+								data-original-title="Some text">
+								<img src="img/icon-question.svg" alt="question" />
 							</div>
 						</div>
 						<div class="select">
-							<select>
-								<option selected="selected" value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
+							<select class="select-quality">
+								<option selected="selected" value="Хорошее">Хорошее</option>
+								<option value="Очень хорошее">Очень хорошее</option>
 							</select>
 						</div>
 					</div>
@@ -171,11 +119,7 @@
 				<div class="calculate__footer">
 					<div class="step-wrap">
 						<span class="step-text">Шаг 2/3</span>
-						<img
-							class="step-img"
-							src="img/icon-step-2.svg"
-							alt="icon"
-						/>
+						<img class="step-img" src="img/icon-step-2.svg" alt="icon" />
 					</div>
 					<div class="calculate__footer-button-wrap">
 						<button class="btn calculate__prev calculate__prev-2">
@@ -196,27 +140,23 @@
 					<div class="callback__form">
 						<div class="callback__form-phone">
 							<span>+380</span>
-							<input
-								type="text"
-								placeholder="Введите ваш телефон"
-							/>
+							<input name="phone-calculate" type="text" placeholder="Введите ваш телефон"
+								id="phone-calculate" />
 						</div>
+						<span class="error-phone-calculate error">Введите правильный номер телефона</span>
 					</div>
 				</div>
 				<div class="calculate__footer">
 					<div class="step-wrap">
 						<span class="step-text">Шаг 3/3</span>
-						<img
-							class="step-img"
-							src="img/icon-step-3.svg"
-							alt="icon"
-						/>
+						<img class="step-img" src="img/icon-step-3.svg" alt="icon" />
 					</div>
 					<div class="calculate__footer-button-wrap">
-						<button class="btn calculate__prev calculate__prev-3">
+						<button type="button" class="btn calculate__prev calculate__prev-3">
 							Назад
 						</button>
-						<button class="btn calculate__next calculate__next-3">
+						<button type="submit" class="btn calculate__next calculate__next-3 btn-calculate"
+							form="calculate-form">
 							Далее
 						</button>
 					</div>
@@ -225,20 +165,7 @@
 
 			<!-- calculate-3 end-->
 
-			<!-- <div class="calculate__footer">
-				<div class="step-wrap">
-					<span class="step-text">Шаг 1/3</span>
-					<img
-						class="step-img"
-						src="img/icon-step-1.svg"
-						alt="icon"
-					/>
-				</div>
-				<div class="calculate__footer-button-wrap">
-					<button class="btn calculate__prev">Назад</button>
-					<button class="btn calculate__next">Далее</button>
-				</div>
-			</div> -->
+
 		</div>
 	</div>
 </div>

@@ -1,7 +1,9 @@
 var fileInput = document.querySelector(".input-file"),
   button = document.querySelector(".btn-file"),
   the_return = document.querySelector(".file-return"),
-  droparea = document.querySelector(".input-file-wrap");
+  droparea = document.querySelector(".input-file-wrap"),
+  errorFile = document.querySelector(".error-file"),
+  formValid = document.querySelector(".calculate-1__right");
 
 // button.addEventListener("keydown", function (event) {
 //   if (event.keyCode == 13 || event.keyCode == 32) {
@@ -18,10 +20,14 @@ fileInput.addEventListener("change", function (event) {
   if (FileSize > 20) {
     the_return.innerHTML = "загрузите файл размером до 20 mb";
     the_return.style.color = "red";
+    formValid.classList.remove("valid");
+
     this.value = null;
   } else {
     the_return.innerHTML = this.value;
     the_return.style.color = "#fff";
+    formValid.classList.add("valid");
+    errorFile.style.display = "none";
   }
 });
 

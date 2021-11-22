@@ -14,194 +14,202 @@
 @import "footer";
 
 body {
-	margin: 0;
-	padding: 0;
-	font-family: "TTFirsNeueRegular", sans-serif;
-	overflow-x: hidden;
-	// .hidden {
-	//     overflow-y: hidden;
-	// }
+  margin: 0;
+  padding: 0;
+  font-family: "TTFirsNeueRegular", sans-serif;
+  overflow-x: hidden;
+  // .hidden {
+  //     overflow-y: hidden;
+  // }
 }
 
 body.hidden {
-	overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 label,
 h1,
 h3,
 p {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 input {
-	width: 100%;
-	outline: 0;
+  width: 100%;
+  outline: 0;
 }
 
 ul {
-	padding: 0;
-	margin: 0;
-	li {
-		list-style-type: none;
-	}
+  padding: 0;
+  margin: 0;
+  li {
+    list-style-type: none;
+  }
 }
 
 img {
-	width: 100%;
+  width: 100%;
 }
 
 a {
-	transition: 0.3s;
-	outline: none;
-	text-decoration: none;
-	&:hover {
-		text-decoration: none;
-	}
+  transition: 0.3s;
+  outline: none;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .faded {
-	z-index: 6;
-	opacity: 1;
+  z-index: 6;
+  opacity: 1;
 }
 
 .container-long {
-	width: 100%;
-	max-width: 1440px;
-	margin: 0 auto;
-	padding: 0 15px;
-	box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .container {
-	width: 100%;
-	max-width: 1170px;
-	margin: 0 auto;
-	box-sizing: border-box;
-	@media (max-width: 1200px) {
-		max-width: 960px;
-	}
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  @media (max-width: 1200px) {
+    max-width: 960px;
+  }
 }
 
 .btn {
-	font-family: "TTFirsNeueMedium", sans-serif;
-	background: $accent-color;
-	border-radius: 8px;
-	color: #000;
-	font-size: 18px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 23px;
-	letter-spacing: 0em;
-	text-align: center;
-	box-shadow: $box-shadow;
-	border: none;
-	cursor: pointer;
-	transition: 0.3s;
-	&:hover {
-		box-shadow: none;
-	}
-	@media (max-width: 992px) {
-		height: 45px;
-	}
+  font-family: "TTFirsNeueMedium", sans-serif;
+  background: $accent-color;
+  border-radius: 8px;
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: center;
+  box-shadow: $box-shadow;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: none;
+  }
+  @media (max-width: 992px) {
+    height: 45px;
+  }
 }
 
 .btn-calc {
-	font-family: "TTFirsNeueMedium", sans-serif;
-	background: #2c2c2c;
-	border: none;
-	border-radius: 8px;
-	font-size: 18px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 23px;
-	letter-spacing: 0em;
-	text-align: center;
-	box-shadow: $box-shadow;
-	color: $accent-color;
-	transition: 0.3s;
-	cursor: pointer;
-	&:hover {
-		box-shadow: none;
-	}
-	@media (max-width: 992px) {
-		height: 45px !important;
-	}
+  font-family: "TTFirsNeueMedium", sans-serif;
+  background: #2c2c2c;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: center;
+  box-shadow: $box-shadow;
+  color: $accent-color;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: none;
+  }
+  @media (max-width: 992px) {
+    height: 45px !important;
+  }
 }
 
 .top {
-	&-img {
-		max-width: 580px;
-		position: absolute;
-		z-index: -1;
-		transform: translateX(-50%);
-		top: 0px;
-		left: 40%;
-		@media (max-width: 1200px) {
-			max-width: 475px;
-		}
-		@media (max-width: 992px) {
-			max-width: 375px;
-			left: auto;
-			right: 0;
-			top: 54px;
-			transform: translateX(0%);
-		}
-	}
+  &-img {
+    max-width: 580px;
+    position: absolute;
+    z-index: -1;
+    transform: translateX(-50%);
+    top: 0px;
+    left: 40%;
+    @media (max-width: 1200px) {
+      max-width: 475px;
+    }
+    @media (max-width: 992px) {
+      max-width: 375px;
+      left: auto;
+      right: 0;
+      top: 54px;
+      transform: translateX(0%);
+    }
+  }
 }
 .mob-dn {
-	@media (max-width: 800px) {
-		display: none;
-	}
+  @media (max-width: 800px) {
+    display: none;
+  }
 }
 
 h1 {
-	font-size: 60px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 66px;
-	letter-spacing: 0em;
-	text-align: left;
-	color: #000;
-	text-transform: uppercase;
-	font-family: "TTFirsNeueMedium", sans-serif;
-	@media (max-width: 1200px) {
-		font-size: 50px;
-		line-height: 65px;
-	}
-	@media (max-width: 567px) {
-		font-size: 37px;
-		line-height: 49px;
-	}
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 66px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+  text-transform: uppercase;
+  font-family: "TTFirsNeueMedium", sans-serif;
+  @media (max-width: 1200px) {
+    font-size: 50px;
+    line-height: 65px;
+  }
+  @media (max-width: 567px) {
+    font-size: 37px;
+    line-height: 49px;
+  }
 }
 
 h2 {
-	color: #000;
-	text-transform: uppercase;
-	font-family: "TTFirsNeueMedium", sans-serif;
-	font-size: 54px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 59px;
-	letter-spacing: 0em;
-	text-align: center;
-	@media (max-width: 1200px) {
-		font-size: 47px;
-		line-height: 62px;
-	}
-	@media (max-width: 567px) {
-		font-size: 34px;
-		line-height: 43px;
-	}
+  color: #000;
+  text-transform: uppercase;
+  font-family: "TTFirsNeueMedium", sans-serif;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 59px;
+  letter-spacing: 0em;
+  text-align: center;
+  @media (max-width: 1200px) {
+    font-size: 47px;
+    line-height: 62px;
+  }
+  @media (max-width: 567px) {
+    font-size: 34px;
+    line-height: 43px;
+  }
 }
 
 .m-section {
-	margin-top: 150px;
-	@media (max-width: 992px) {
-		margin-top: 70px;
-	}
-	@media (max-width: 567px) {
-		margin-top: 30px;
-	}
+  margin-top: 150px;
+  @media (max-width: 992px) {
+    margin-top: 70px;
+  }
+  @media (max-width: 567px) {
+    margin-top: 30px;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  position: absolute;
+  bottom: -20px;
+  display: none;
 }
