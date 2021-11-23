@@ -35,15 +35,15 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'yariincheri@gmail.com';
-    $mail->Password = 'vjmyuihnpixraqho';
+    $mail->Username = '***';
+    $mail->Password = '***';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
     $mail->charSet = "UTF-8";
-    $mail->setFrom('yariincheri@gmail.com', '3D - печать'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('***', '3D - печать'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('wow.work1311@gmail.com');
+    $mail->addAddress('***');
 
 
 
