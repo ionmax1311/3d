@@ -1,3 +1,10 @@
+$(".portfolio__slider").each(function (index) {
+	$(this).css(
+		"margin-top",
+		($(".slider").height() - $(this).height()) / 2 + "px",
+	);
+});
+
 // Portfolio slider
 
 $(".portfolio__slider").slick({
@@ -5,6 +12,7 @@ $(".portfolio__slider").slick({
 	centerPadding: "150px",
 	slidesToShow: 4,
 	appendArrows: $(".portfolio-arrow"),
+	adaptiveHeight: true,
 	prevArrow:
 		'<button id="prevPortfolio" type="button" class="btn-slider-portfolio"><i class="fa fa-chevron-left" aria-hidden="true"></i> </button>',
 	nextArrow:

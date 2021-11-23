@@ -1,174 +1,175 @@
 .models {
-  margin-top: 200px;
+	margin-top: 200px;
 
-  @media (max-width: 992px) {
-    margin-top: 150px;
-  }
-  @media (max-width: 567px) {
-    margin-top: 120px;
-  }
-  &__title {
-    text-align: left;
-    span {
-      color: $accent-color;
-    }
-  }
-  &__left {
-    max-width: 412px;
-    width: 100%;
-    position: relative;
-    margin-right: 193px;
-    @media (max-width: 1200px) {
-      margin-right: 50px;
-    }
-    @media (max-width: 992px) {
-      margin: 0 auto 0;
-    }
-  }
-  &__wrap {
-    display: flex;
-    @media (max-width: 992px) {
-      flex-direction: column;
-    }
-  }
+	@media (max-width: 992px) {
+		margin-top: 150px;
+	}
+	@media (max-width: 567px) {
+		margin-top: 120px;
+	}
+	&__title {
+		text-align: left;
+		span {
+			color: $accent-color;
+		}
+	}
+	&__left {
+		max-width: 412px;
+		width: 100%;
+		position: relative;
+		margin-right: 193px;
+		@media (max-width: 1200px) {
+			margin-right: 50px;
+		}
+		@media (max-width: 992px) {
+			margin: 0 auto 0;
+		}
+	}
+	&__wrap {
+		display: flex;
+		@media (max-width: 992px) {
+			flex-direction: column;
+		}
+	}
 
-  &__text-bg {
-    font-family: "TTFirsNeueMedium", sans-serif;
-    font-size: 144px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 158px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #f4f4f4;
-    position: absolute;
-    z-index: -1;
-    text-transform: uppercase;
-    right: -30px;
-    @media (max-width: 992px) {
-      right: 0;
-      bottom: -75px;
-    }
-    @media (max-width: 567px) {
-      bottom: -80px;
-      font-size: 90px;
-    }
-  }
-  &__right {
-    padding: 0 40px 40px 40px;
-    background: #f4f4f4;
-    max-width: 470px;
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 50px;
-    @media (max-width: 992px) {
-      margin: 170px auto 0;
-    }
-    @media (max-width: 567px) {
-      margin: 150px auto 0;
-      padding: 0 20px 40px;
-    }
-  }
-  &__img-wrap {
-    position: relative;
-    img {
-      width: auto;
-    }
-  }
-  &-setka {
-    margin-top: 127px;
-    @media (max-width: 567px) {
-      width: 250px !important;
-      margin: 120px auto 0;
-    }
-  }
-  &-type {
-    position: absolute;
-    top: -48px;
-    transform: translateX(-50%);
-    left: 50%;
-    margin-top: 50px;
-    @media (max-width: 567px) {
-      width: 180px !important;
-      top: -39px;
-    }
-  }
-  &__slider {
-    margin-top: -50px;
-    &-for {
-      button {
-        border-radius: 50%;
-        border: 0;
-        background: #333;
-        width: 50px;
-        height: 50px;
-        outline: 0;
-        .fa {
-          color: $accent-color;
-        }
-        @media (max-width: 567px) {
-          width: 35px;
-          height: 35px;
-        }
-      }
-    }
-    &-nav {
-      justify-content: space-between;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 24px;
-    }
-  }
-  &-item {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 186.81px;
-    height: 57px;
+	&__text-bg {
+		font-family: "TTFirsNeueMedium", sans-serif;
+		font-size: 144px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 158px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #f4f4f4;
+		position: absolute;
+		z-index: -1;
+		text-transform: uppercase;
+		right: -30px;
+		@media (max-width: 992px) {
+			right: 0;
+			bottom: -75px;
+		}
+		@media (max-width: 567px) {
+			bottom: -80px;
+			font-size: 90px;
+		}
+	}
+	&__right {
+		padding: 0 40px 40px 40px;
+		background: #f4f4f4;
+		max-width: 470px;
+		width: 100%;
+		border-radius: 12px;
+		margin-top: 50px;
+		@media (max-width: 992px) {
+			margin: 170px auto 0;
+		}
+		@media (max-width: 567px) {
+			margin: 150px auto 0;
+			padding: 0 20px 40px;
+		}
+	}
+	&__img-wrap {
+		position: relative;
+		img {
+			width: auto;
+		}
+	}
+	&-setka {
+		margin-top: 127px;
+		@media (max-width: 567px) {
+			width: 250px !important;
+			margin: 120px auto 0;
+		}
+	}
+	&-type {
+		position: absolute;
+		top: -48px;
+		transform: translateX(-50%);
+		left: 50%;
+		margin-top: 50px;
+		max-width: 230px;
+		@media (max-width: 567px) {
+			width: 180px !important;
+			top: -39px;
+		}
+	}
+	&__slider {
+		margin-top: -50px;
+		&-for {
+			button {
+				border-radius: 50%;
+				border: 0;
+				background: #333;
+				width: 50px;
+				height: 50px;
+				outline: 0;
+				.fa {
+					color: $accent-color;
+				}
+				@media (max-width: 567px) {
+					width: 35px;
+					height: 35px;
+				}
+			}
+		}
+		&-nav {
+			justify-content: space-between;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 16px;
+			margin-top: 24px;
+		}
+	}
+	&-item {
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 186.81px;
+		height: 57px;
 
-    border: 2px solid #e3e3e3;
-    box-sizing: border-box;
-    border-radius: 12px;
+		border: 2px solid #e3e3e3;
+		box-sizing: border-box;
+		border-radius: 12px;
 
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    color: #2c2c2c;
-    // transition: 0.3s;
-    &.active {
-      background: #fff;
-      border: none;
-    }
-    &:hover {
-      background: #fff;
-      border: none;
-    }
-    @media (max-width: 567px) {
-      width: 100%;
-      height: 46px;
-    }
-  }
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 22px;
+		text-align: center;
+		color: #2c2c2c;
+		// transition: 0.3s;
+		&.active {
+			background: #fff;
+			border: none;
+		}
+		&:hover {
+			background: #fff;
+			border: none;
+		}
+		@media (max-width: 567px) {
+			width: 100%;
+			height: 46px;
+		}
+	}
 }
 
 #nextModels {
-  position: absolute;
-  right: -65px;
-  transform: translateY(-50%);
-  top: 70%;
-  @media (max-width: 567px) {
-    right: -34px;
-  }
+	position: absolute;
+	right: -65px;
+	transform: translateY(-50%);
+	top: 70%;
+	@media (max-width: 567px) {
+		right: -34px;
+	}
 }
 #prevModels {
-  position: absolute;
-  left: -65px;
-  transform: translateY(-50%);
-  top: 70%;
-  @media (max-width: 567px) {
-    left: -34px;
-  }
+	position: absolute;
+	left: -65px;
+	transform: translateY(-50%);
+	top: 70%;
+	@media (max-width: 567px) {
+		left: -34px;
+	}
 }

@@ -13,6 +13,13 @@
 	}
 	.slick-slide {
 		margin: 0 15px;
+		img {
+			border-radius: 12px;
+		}
+	}
+	.slick-track {
+		display: flex !important;
+		align-items: center;
 	}
 	&-arrow {
 		width: 131px;
