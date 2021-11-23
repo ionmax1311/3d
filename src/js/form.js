@@ -5,12 +5,13 @@ $(".btn-calculate").click(function () {
   let selectMaterialVal = $(".selectMaterial-val").val();
   let selectColorVal = $(".selectColor-val").val();
   let selectQualityVal = $(".selectQuality-val").val();
-  if (!fileVal) {
-    console.log("file-false");
-    fileVal = $(".input-link").val();
-  } else {
-    console.log("file-true", fileVal);
-  }
+  let fileLink = $(".input-link").val();
+  // if (!fileVal) {
+  //   console.log("file-false");
+  //   fileVal = $(".input-link").val();
+  // } else {
+  //   console.log("file-true", fileVal);
+  // }
 
   let phoneCalculate = $("#phone-calculate").val();
 
@@ -19,16 +20,35 @@ $(".btn-calculate").click(function () {
   //result.html(regex.test(input));
   if (phoneCalculate.match(regex)) {
     $(".error-phone-calculate").css("display", "none");
-    console.log("phone-val---", phoneCalcVal);
-    console.log("file-val---", fileVal);
-    console.log("type-val---", typeVal);
-    console.log("selectMaterial-val---", selectMaterialVal);
-    console.log("selectColor-val---", selectColorVal);
-    console.log("selectQuality-val---", selectQualityVal);
+    $(".preloader").addClass("active");
 
-    // var form = new ProcessForm();
-    // form.init();
-    // window.location = "success.html";
+    var formData = new FormData();
+    formData.append("file", $("#file")[0].files[0]);
+    formData.append("type", typeVal);
+    formData.append("selectMaterial", selectMaterialVal);
+    formData.append("selectColor", selectColorVal);
+    formData.append("selectQuality", selectQualityVal);
+    formData.append("calculatePhone", phoneCalcVal);
+    formData.append("link", fileLink);
+
+    var thistarget = this.target;
+    jQuery.ajax({
+      url: "php/sendForm.php",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      // dataType: "json",
+      // contentType: "application/json;charset=utf-8",
+      error: function () {
+        $(thistarget).html("Error: Failed to submit form!");
+        $(".preloader").removeClass("active");
+      },
+
+      success: function (results) {
+        window.location.replace("success.html");
+      },
+    });
   } else {
     $(".error-phone-calculate").css("display", "block");
   }

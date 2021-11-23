@@ -65,13 +65,114 @@ $(".calculate__prev-2").click(function (e) {
 });
 
 $(".btn-type").click(function (e) {
-  e.preventDefault();
+  // $(document).on("click", ".btn-type", function () {
+  // e.preventDefault();
+
   $(".btn-type").removeClass("active");
   $(this).addClass("active");
   let typeVal = $(this).data("type");
   $(this).data("type", typeVal);
   $(".error-type").css("display", "none");
   $(".type-val").val(typeVal);
+
+  if ($(this).data("type") === "FDM") {
+    $(".tooltip-type").attr(
+      "data-original-title",
+      "Послойное наплавление пластика. Невысокая цена печати. Средняя детализация изделий. Быстрая печать."
+    );
+    // $(".calculate-2__wrap-fdm").css("display", "block ");
+    // $(".calculate-2__wrap-sla").css("display", "none ");
+    $(".calculate-2__wrap-fdm").addClass("active");
+    $(".calculate-2__wrap-sla").removeClass("active");
+  } else if ($(this).data("type") === "SLA") {
+    $(".tooltip-type").attr(
+      "data-original-title",
+      "Технология застывания фотополимерной смолы. Самая высокая точность моделей среди 3d принтеров. Цена выше чем у FDM печати."
+    );
+    // $(".calculate-2__wrap-fdm").css("display", "none ");
+    // $(".calculate-2__wrap-sla").css("display", "block ");
+    $(".calculate-2__wrap-fdm").removeClass("active");
+    $(".calculate-2__wrap-sla").addClass("active");
+  }
+});
+
+$(".select-material").on("change", function () {
+  if ($(this).val() === "PLA") {
+    $(".tooltip-material").attr(
+      "data-original-title",
+      "PLA - термопластик. Благодаря низкой температуре плавления и минимальному деформированию PLA является одним из самых простых материалов для печати. PLA достаточно хрупкий, лучше всего подходит для печати декоративных моделей."
+    );
+  }
+  if ($(this).val() === "ABS") {
+    $(".tooltip-material").attr(
+      "data-original-title",
+      "ABS - менее жесткий, чем PLA, но более ударопрочный и легкий материал. Для печати ABS требуется больше усилий, чем PLA. Подходит для некоторых применений, выходящих за рамки чисто хоббистских, например прототипов и конечных деталей с низкой нагрузкой"
+    );
+  }
+  if ($(this).val() === "ABS+") {
+    $(".tooltip-material").attr(
+      "data-original-title",
+      "ABS+ - инженерная разновидность ABS. Немного более прочный материал с повышенной защитой от высоких температур."
+    );
+  }
+  if ($(this).val() === "PETG") {
+    $(".tooltip-material").attr(
+      "data-original-title",
+      "PETG - и прочный и надежный материал. Есть возможность печатать модели прозрачными цветами. Если вам не нужна высокая термостойкость, это отличный материал, который многие называют золотой серединой."
+    );
+  }
+  if ($(this).val() === "Не знаю") {
+    $(".tooltip-material").attr(
+      "data-original-title",
+      "Выберите материал печати"
+    );
+  }
+});
+
+$(document).ready(function () {
+  // $(".tooltip-type").attr(
+  //   "data-original-title",
+  //   "Послойное наплавление пластика. Невысокая цена печати. Средняя детализация изделий. Быстрая печать."
+  // );
+});
+
+$("#callback-btn").click(function () {
+  let phoneCallback = "+380" + $(".phone-callback").val();
+
+  let phoneCalculate = $("#phone-calculate").val();
+
+  let regex = /^(66|95|99|50|67|68|96|97|98|63|73|93|39|91|92|94)\d{7}$/;
+
+  //result.html(regex.test(input));
+  if (phoneCalculate.match(regex)) {
+    $(".error-phone-callback").css("display", "none");
+    $(".preloader").addClass("active");
+
+    var formData = new FormData();
+
+    formData.append("callbackPhone", phoneCallback);
+
+    var thistarget = this.target;
+    jQuery.ajax({
+      url: "php/sendCallback.php",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      // dataType: "json",
+      // contentType: "application/json;charset=utf-8",
+      error: function () {
+        $(thistarget).html("Error: Failed to submit form!");
+        $(".preloader").removeClass("active");
+      },
+
+      success: function (results) {
+        window.location.replace("success.html");
+      },
+    });
+  } else {
+    $(".error-phone-callback").css("display", "block");
+  }
 });
 
 var fileInput = document.querySelector(".input-file"),
@@ -92,16 +193,30 @@ var fileInput = document.querySelector(".input-file"),
 // });
 
 fileInput.addEventListener("change", function (event) {
+  var res_field = this.files[0].name;
+  var extension = res_field
+    .substr(res_field.lastIndexOf(".") + 1)
+    .toLowerCase();
+  var allowedExtensions = ["stl", "obj"];
   let FileSize = this.files[0].size / 1024 / 1024; // in MB
-  if (FileSize > 20) {
-    the_return.innerHTML = "загрузите файл размером до 20 mb";
+  if (allowedExtensions.indexOf(extension) === -1) {
+    console.log("extension", extension);
+    console.log("res_field", res_field);
+    console.log("this.files[0]", this.files[0]);
+    the_return.innerHTML = "не допустимый тип файла";
+    the_return.style.color = "red";
+    formValid.classList.remove("valid");
+
+    this.value = null;
+  } else if (FileSize > 10) {
+    the_return.innerHTML = "загрузите файл размером до 10 mb";
     the_return.style.color = "red";
     formValid.classList.remove("valid");
 
     this.value = null;
   } else {
     the_return.innerHTML = this.value;
-    the_return.style.color = "#fff";
+    the_return.style.color = "#f8ca00";
     formValid.classList.add("valid");
     errorFile.style.display = "none";
   }
@@ -126,12 +241,13 @@ $(".btn-calculate").click(function () {
   let selectMaterialVal = $(".selectMaterial-val").val();
   let selectColorVal = $(".selectColor-val").val();
   let selectQualityVal = $(".selectQuality-val").val();
-  if (!fileVal) {
-    console.log("file-false");
-    fileVal = $(".input-link").val();
-  } else {
-    console.log("file-true", fileVal);
-  }
+  let fileLink = $(".input-link").val();
+  // if (!fileVal) {
+  //   console.log("file-false");
+  //   fileVal = $(".input-link").val();
+  // } else {
+  //   console.log("file-true", fileVal);
+  // }
 
   let phoneCalculate = $("#phone-calculate").val();
 
@@ -140,16 +256,35 @@ $(".btn-calculate").click(function () {
   //result.html(regex.test(input));
   if (phoneCalculate.match(regex)) {
     $(".error-phone-calculate").css("display", "none");
-    console.log("phone-val---", phoneCalcVal);
-    console.log("file-val---", fileVal);
-    console.log("type-val---", typeVal);
-    console.log("selectMaterial-val---", selectMaterialVal);
-    console.log("selectColor-val---", selectColorVal);
-    console.log("selectQuality-val---", selectQualityVal);
+    $(".preloader").addClass("active");
 
-    // var form = new ProcessForm();
-    // form.init();
-    // window.location = "success.html";
+    var formData = new FormData();
+    formData.append("file", $("#file")[0].files[0]);
+    formData.append("type", typeVal);
+    formData.append("selectMaterial", selectMaterialVal);
+    formData.append("selectColor", selectColorVal);
+    formData.append("selectQuality", selectQualityVal);
+    formData.append("calculatePhone", phoneCalcVal);
+    formData.append("link", fileLink);
+
+    var thistarget = this.target;
+    jQuery.ajax({
+      url: "php/sendForm.php",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      // dataType: "json",
+      // contentType: "application/json;charset=utf-8",
+      error: function () {
+        $(thistarget).html("Error: Failed to submit form!");
+        $(".preloader").removeClass("active");
+      },
+
+      success: function (results) {
+        window.location.replace("success.html");
+      },
+    });
   } else {
     $(".error-phone-calculate").css("display", "block");
   }

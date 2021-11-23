@@ -2,18 +2,20 @@
 	<div class="container">
 		<div class="calculate__wrap">
 			<h2 class="calculate__title">Рассчитать стоимость печати</h2>
+			<!-- calculate-1 -->
 			<div class="calculate__content calculate-1 active">
 				<div class="calculate__content-wrap">
 					<div class="calculate-1__left">
 						<div class="calculate__content-title-wrap">
 							<span class="calculate__content-title">Выберите тип печати</span>
-							<div class="question-wrap" data-toggle="tooltip" data-placement="top" title="Some text">
+							<div class="question-wrap tooltip-type" data-toggle="tooltip" data-placement="top"
+								data-original-title="Послойное наплавление пластика. Невысокая цена печати. Средняя детализация изделий. Быстрая печать.">
 								<img src="img/icon-question.svg" alt="question" />
 							</div>
 						</div>
 
 						<div class="calculate__type">
-							<button class="btn calculate__type-btn-f btn-type" data-type="FDM">
+							<button class="btn calculate__type-btn-f btn-type active" data-type="FDM">
 								FDM
 							</button>
 							<button class="btn calculate__type-btn-s btn-type" data-type="SLA">
@@ -24,10 +26,11 @@
 					</div>
 					<div class="calculate-1__right">
 						<span class="calculate__content-title">Загрузите файл для просчета</span>
-						<form action="php/process.php" enctype="multipart/form-data" id="calculate-form">
+						<form action="./php/sendForm.php" enctype="multipart/form-data" id="calculate-form"
+							method="POST" accept-charset="UTF-8">
 							<div class="input-file-wrap fileUploadInput attachments">
 								<input class="upload input-file " id="file" required="true" type="file"
-									accept=".stl,.obj" name="attachment[]" />
+									accept=".stl,.obj, zip, rar" name="file" />
 								<label tabindex="0" for="file" class="btn-file"><img class="img-folder"
 										src="img/icon-folder.png" alt="folder" />
 									Выберите файл
@@ -41,13 +44,14 @@
 								<img src="img/icon-link.svg" alt="link" />
 								<!-- <div class="text-link">Или вставьте ссылку на онлайн диск (Google Диск, DropBox, Mega, Fex и
                             другие)</div> -->
-								<input class="input-link" type="text"
+								<input class="input-link" type="text" name="link"
 									placeholder="Или вставьте ссылку на онлайн диск (Google Диск, DropBox, Mega, Fex и другие)" />
 							</div>
-							<input type="hidden" name="type" class="type-val">
+							<input type="hidden" name="type" class="type-val" value="FDM">
 							<input type="hidden" name="selectMaterial" class="selectMaterial-val">
 							<input type="hidden" name="selectColor" class="selectColor-val">
 							<input type="hidden" name="selectQuality" class="selectQuality-val">
+							<input type="hidden" name="calculatePhone" class="calculatePhone-val">
 						</form>
 						<span class="error-file error">Загрузите файл или ссылку</span>
 					</div>
@@ -67,22 +71,25 @@
 					</div>
 				</div>
 			</div>
+			<!-- calculate-1 end -->
+
+
 			<!-- calculate-2 -->
 			<div class="calculate__content calculate-2">
-				<div class="calculate-2__wrap">
+				<div class="calculate-2__wrap calculate-2__wrap-fdm active">
 					<div class="calculate-2__item">
 						<div class="calculate__content-title-wrap">
 							<span class="calculate__content-title">Выберите Материал печати</span>
-							<div class="question-wrap" data-toggle="tooltip" data-placement="top" title=""
-								data-original-title="Some text">
+							<div class="question-wrap tooltip-material" data-toggle="tooltip" data-placement="top"
+								data-original-title="PLA - термопластик. Благодаря низкой температуре плавления и минимальному деформированию PLA является одним из самых простых материалов для печати. PLA достаточно хрупкий, лучше всего подходит для печати декоративных моделей.">
 								<img src="img/icon-question.svg" alt="question" />
 							</div>
 						</div>
 						<div class="select">
 							<select class="select-material">
-								<option selected="selected" value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
+
+								<option value="PLA">PLA</option>
+
 							</select>
 						</div>
 					</div>
@@ -92,26 +99,98 @@
 						</div>
 						<div class="select">
 							<select class="select-color">
-								<option selected="selected" value="Красный">
-									Красный
-								</option>
+								<option selected="selected" value="Черный">Черный</option>
+								<option value="Красный">Красный</option>
+								<option value="Темно-серый">Темно-серый</option>
+								<option value="Оранжевый">Оранжевый</option>
+								<option value="Желтый">Желтый</option>
+								<option value="Прозрачный">Прозрачный</option>
+
+								<option value="Зеленый">Зеленый</option>
 								<option value="Синий">Синий</option>
-								<option value="Розовый">Розовый</option>
+								<option value="Фиолетовый">Фиолетовый</option>
+								<option value="Не знаю">Не знаю</option>
 							</select>
 						</div>
 					</div>
 					<div class="calculate-2__item">
 						<div class="calculate__content-title-wrap">
 							<span class="calculate__content-title">Выберите качество печати</span>
-							<div class="question-wrap" data-toggle="tooltip" data-placement="top" title=""
-								data-original-title="Some text">
+							<div class="question-wrap" data-toggle="tooltip" data-placement="top"
+								data-original-title="Чем меньше толщина слоя микронов тем более гладкой получается модель. При печати не будет заметно лесенок уровней. Если хотите модель максимальной гладкости и четкости выбирайте минимальный показатель микронов.">
 								<img src="img/icon-question.svg" alt="question" />
 							</div>
 						</div>
 						<div class="select">
 							<select class="select-quality">
-								<option selected="selected" value="Хорошее">Хорошее</option>
-								<option value="Очень хорошее">Очень хорошее</option>
+								<option selected="selected" value="Слой  150 микронов">Слой 150 микронов</option>
+								<option value="Слой 100 микронов">Слой 100 микронов</option>
+								<option value="Слой 25 микронов">Слой 25 микронов</option>
+								<option value="Не знаю">Не знаю</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="calculate-2__wrap calculate-2__wrap-sla">
+					<div class="calculate-2__item">
+						<div class="calculate__content-title-wrap">
+							<span class="calculate__content-title">Выберите Материал печати</span>
+							<div class="question-wrap tooltip-material" data-toggle="tooltip" data-placement="top"
+								title="ABS - менее жесткий, чем PLA, но более ударопрочный и легкий материал. Для печати ABS требуется больше усилий, чем PLA. Подходит для некоторых применений, выходящих за рамки чисто хоббистских, например прототипов и конечных деталей с низкой нагрузкой"
+								data-original-title="Some text">
+								<img src="img/icon-question.svg" alt="question" />
+							</div>
+						</div>
+						<div class="select">
+							<select class="select-material">
+								<option selected="selected" value="ABS">ABS</option>
+								<option value="ABS+">ABS+</option>
+								<option value="PLA">PLA</option>
+								<option value="PETG">COPet (PETG)</option>
+								<option value="Не знаю">Не знаю</option>
+
+							</select>
+						</div>
+					</div>
+					<div class="calculate-2__item">
+						<div class="calculate__content-title-wrap">
+							<span class="calculate__content-title">Выберите цвет материала</span>
+						</div>
+						<div class="select">
+							<select class="select-color">
+								<option selected="selected" value="Черный">
+									Черный
+								</option>
+								<option value="Красный">Красный</option>
+								<option value="Оранжевый">Оранжевый</option>
+								<option value="Желтый">Желтый</option>
+								<option value="Коричневый">Коричневый</option>
+								<option value="Белый">Белый</option>
+								<option value="Вишневый">Вишневый</option>
+								<option value="Салатовый">Салатовый</option>
+								<option value="Зеленый">Зеленый</option>
+								<option value="Синий">Синий</option>
+								<option value="Голубой">Голубой</option>
+								<option value="Фиолетовый">Фиолетовый</option>
+								<option value="Металлик">Металлик</option>
+								<option value="Не знаю">Не знаю</option>
+							</select>
+						</div>
+					</div>
+					<div class="calculate-2__item">
+						<div class="calculate__content-title-wrap">
+							<span class="calculate__content-title">Выберите качество печати</span>
+							<div class="question-wrap" data-toggle="tooltip" data-placement="top"
+								data-original-title="Чем меньше толщина слоя микронов тем более гладкой получается модель. При печати не будет заметно лесенок уровней. Если хотите модель максимальной гладкости и четкости выбирайте минимальный показатель микронов.">
+								<img src="img/icon-question.svg" alt="question" />
+							</div>
+						</div>
+						<div class="select">
+							<select class="select-quality">
+								<option selected="selected" value="Слой  200 микронов">Слой 200 микронов</option>
+								<option value="Слой 150 микронов">Слой 150 микронов</option>
+								<option value="Слой 100 микронов">Слой 100 микронов</option>
+								<option value="Не знаю">Не знаю</option>
 							</select>
 						</div>
 					</div>
@@ -134,6 +213,8 @@
 
 			<!-- calculate-2 end-->
 
+
+
 			<!-- calculate-3 -->
 			<div class="calculate__content calculate-3">
 				<div class="calculate-3__wrap">
@@ -155,7 +236,7 @@
 						<button type="button" class="btn calculate__prev calculate__prev-3">
 							Назад
 						</button>
-						<button type="submit" class="btn calculate__next calculate__next-3 btn-calculate"
+						<button type="button" class="btn calculate__next calculate__next-3 btn-calculate"
 							form="calculate-form">
 							Далее
 						</button>
