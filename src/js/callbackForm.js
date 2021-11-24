@@ -1,13 +1,15 @@
-$("#callback-btn").click(function () {
-  let phoneCallback = "+380" + $(".phone-callback").val();
+$(".callback-btn").click(function (event) {
+  event.preventDefault();
+  let phoneCallback =
+    "+380" + $(this).closest("form").find(".phone-callback").val();
 
-  let phoneCalculate = $("#phone-calculate").val();
+  let phoneCallbackVal = $(this).closest("form").find(".phone-callback").val();
 
   let regex = /^(66|95|99|50|67|68|96|97|98|63|73|93|39|91|92|94)\d{7}$/;
+  let error = $(this).closest("form").find(".error");
 
-  //result.html(regex.test(input));
-  if (phoneCalculate.match(regex)) {
-    $(".error-phone-callback").css("display", "none");
+  if (phoneCallbackVal.match(regex)) {
+    error.css("display", "none");
     $(".preloader").addClass("active");
 
     var formData = new FormData();
@@ -21,8 +23,6 @@ $("#callback-btn").click(function () {
       data: formData,
       processData: false,
       contentType: false,
-      // dataType: "json",
-      // contentType: "application/json;charset=utf-8",
       error: function () {
         $(thistarget).html("Error: Failed to submit form!");
         $(".preloader").removeClass("active");
@@ -33,6 +33,6 @@ $("#callback-btn").click(function () {
       },
     });
   } else {
-    $(".error-phone-callback").css("display", "block");
+    error.css("display", "block");
   }
 });

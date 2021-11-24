@@ -14,17 +14,39 @@
     <title>Высокоточная PRO 3D печать</title>
 </head>
 
-<body>
+<body class="success">
 
-    <h1>Success</h1>
+    <div class="header">
+        <div class="container-long">
+            <div class="header__wrap">
+                <div class="logo">
+                    <img src="img/logo.svg" alt="logo">
+                    <span class="logo__text">Создаем вещи вместе с вами</span>
+                </div>
+                <ul>
+
+                    <li class="header__phone">
+                        <a href="tel:+3-8-050-783-88-88"><img src="img/icon-phone.svg" alt="phone">050 783 88
+                            88</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container success__text">
+        <h1>Спасибо за заявку!</h1>
+        <span>Наш менеджер свяжется с Вами в ближайшее время!</span>
+        <button type="button" class="btn success-btn">На главную</button>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
-    <script src="index.js"></script> -->
+    <script>
+        $(".success-btn").click(function () {
+            window.location.replace("/");
+        });
+    </script>
 </body>
 
 </html>

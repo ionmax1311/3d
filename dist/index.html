@@ -54,15 +54,16 @@
 			<div class="hero__left">
 				<h1 class="hero__title">Высокоточная pro 3D печать</h1>
 				<span class="hero__subtitle">по самым адекватным ценам в Украине</span>
-				<form>
+				<form action="./php/sendCallback.php" autocomplete="off" enctype="multipart/form-data" id="callback-form" method="POST" accept-charset="UTF-8">
 					<div class="callback">
 						<div class="callback__phone">
 							<span>+380</span>
-							<input type="text" placeholder="Введите ваш телефон">
+							<input class="phone-callback" type="text" placeholder="Введите ваш телефон">
 						</div>
 
-						<button class="btn hero__btn">Консультация</button>
+						<button type="submit" class="btn hero__btn callback-btn">Консультация</button>
 					</div>
+					<span class="error-phone-callback error 1">Введите правильный номер телефона</span>
 				</form>
 			</div>
 			<div class="hero__right">
@@ -114,7 +115,6 @@
 		</div>
 	</div>
 </div>
-
     </div>
     <div class="how">
     <div class="container">
@@ -534,7 +534,7 @@
 				<div class="models__text-bg">pro</div>
 			</div>
 			<div class="models__right">
-				<!-- <div class="models-arrow"></div> -->
+
 				<div class="models__slider">
 					<div class="models__slider-for">
 						<div class="models__img-wrap">
@@ -581,22 +581,22 @@
 					</div>
 
 					<div class="models__slider-nav">
-						<div class="models-item active" data-slide="1">
+						<div class="models-item active" data-slide="0">
 							Flashforge
 						</div>
-						<div class="models-item" data-slide="2">
+						<div class="models-item" data-slide="1">
 							Anycubic 4Max
 						</div>
-						<div class="models-item" data-slide="3">
+						<div class="models-item" data-slide="2">
 							Anycubic 4MaxPro
 						</div>
-						<div class="models-item" data-slide="4">
+						<div class="models-item" data-slide="3">
 							Creality ld-002h
 						</div>
-						<div class="models-item" data-slide="5">
+						<div class="models-item" data-slide="4">
 							Anycubic I3 Mega
 						</div>
-						<div class="models-item" data-slide="6">
+						<div class="models-item" data-slide="5">
 							JennyPrinter Z370
 						</div>
 					</div>
@@ -605,7 +605,6 @@
 		</div>
 	</div>
 </div>
-
     <div class="post">
     <div class="container">
         <div class="post__wrap">
@@ -819,13 +818,13 @@
             <h2 class="callback__title">
                 Мы все расскажем и поможем. <span>Просто оставьте заявку</span>
             </h2>
-            <form action="./php/sendCallback.php" enctype="multipart/form-data" id="callback-form" method="POST" accept-charset="UTF-8">
+            <form action="./php/sendCallback.php" autocomplete="off" enctype="multipart/form-data" method="POST" accept-charset="UTF-8">
                 <div class="callback__form">
                     <div class="callback__form-phone">
                         <span>+380</span> <input name="callbackPhone" type="text" placeholder="Введите ваш телефон" class="phone-callback">
                     </div>
 
-                    <button type="submit" class="btn hero__btn" id="callback-btn" form="callback-form">Консультация</button>
+                    <button type="submit" class="btn hero__btn callback-btn" form="callback-form">Консультация</button>
                 </div>
                 <span class="error-phone-callback error">Введите правильный номер телефона</span>
             </form>

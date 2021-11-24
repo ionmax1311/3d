@@ -4,15 +4,16 @@
 			<div class="hero__left">
 				<h1 class="hero__title">Высокоточная pro 3D печать</h1>
 				<span class="hero__subtitle">по самым адекватным ценам в Украине</span>
-				<form>
+				<form action="./php/sendCallback.php" autocomplete="off" enctype="multipart/form-data" id="callback-form" method="POST" accept-charset="UTF-8">
 					<div class="callback">
 						<div class="callback__phone">
 							<span>+380</span>
-							<input type="text" placeholder="Введите ваш телефон">
+							<input class="phone-callback" type="text" placeholder="Введите ваш телефон">
 						</div>
 
-						<button class="btn hero__btn">Консультация</button>
+						<button type="submit" class="btn hero__btn callback-btn">Консультация</button>
 					</div>
+					<span class="error-phone-callback error 1">Введите правильный номер телефона</span>
 				</form>
 			</div>
 			<div class="hero__right">

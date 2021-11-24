@@ -23,7 +23,7 @@ $phone = $_POST['callbackPhone'];
 $title = "Обратный звонок: 3D - печать";
 $body = "
 <h2>Обратный звонок:</h2><br>
-<b>Телефон:</b> $type<br>
+<b>Телефон:</b> $phone<br>
 
 ";
 
@@ -35,15 +35,15 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = '***';
-    $mail->Password = '***';
+    $mail->Username = 'yariincheri@gmail.com';
+    $mail->Password = 'vjmyuihnpixraqho';
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
-    $mail->charSet = "UTF-8";
-    $mail->setFrom('***', '3D - печать'); // Адрес самой почты и имя отправителя
+    $mail->CharSet = 'UTF-8';
+    $mail->setFrom('yariincheri@gmail.com', '3D - печать'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('***');
+    $mail->addAddress('wow.work1311@gmail.com');
 
 
 

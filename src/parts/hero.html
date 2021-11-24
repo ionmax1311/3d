@@ -3,40 +3,26 @@
 		<div class="hero__wrap">
 			<div class="hero__left">
 				<h1 class="hero__title">Высокоточная pro 3D печать</h1>
-				<span class="hero__subtitle"
-					>по самым адекватным ценам в Украине</span
-				>
-				<form>
+				<span class="hero__subtitle">по самым адекватным ценам в Украине</span>
+				<form action="./php/sendCallback.php" autocomplete="off" enctype="multipart/form-data"
+					id="callback-form" method="POST" accept-charset="UTF-8">
 					<div class="callback">
 						<div class="callback__phone">
 							<span>+380</span>
-							<input
-								type="text"
-								placeholder="Введите ваш телефон"
-							/>
+							<input class="phone-callback" type="text" placeholder="Введите ваш телефон" />
 						</div>
 
-						<button class="btn hero__btn">Консультация</button>
+						<button type="submit" class="btn hero__btn callback-btn">Консультация</button>
 					</div>
+					<span class="error-phone-callback error 1">Введите правильный номер телефона</span>
 				</form>
 			</div>
 			<div class="hero__right">
 				<div class="hero__right-img-wrap">
-					<img
-						class="img-printer"
-						src="img/hero-printer.png"
-						alt="printer"
-					/>
+					<img class="img-printer" src="img/hero-printer.png" alt="printer" />
 					<img class="img-setka" src="img/setka.svg" alt="setka" />
-					<button
-						type="button"
-						class="btn-calc btn-calc-hero calculate-scroll"
-					>
-						<img
-							class="img-calc"
-							src="img/calc.svg"
-							alt="calculator"
-						/>
+					<button type="button" class="btn-calc btn-calc-hero calculate-scroll">
+						<img class="img-calc" src="img/calc.svg" alt="calculator" />
 						Расчет стоимости
 					</button>
 				</div>
@@ -64,9 +50,7 @@
 				<li>
 					<span class="hero__list-number">04</span>
 					<img src="img/icon-hero-4.svg" alt="icon" />
-					<span class="hero__list-text"
-						>Цены без пустых накруток</span
-					>
+					<span class="hero__list-text">Цены без пустых накруток</span>
 				</li>
 				<li>
 					<span class="hero__list-number">05</span>
@@ -76,9 +60,7 @@
 				<li>
 					<span class="hero__list-number">06</span>
 					<img src="img/icon-hero-6.svg" alt="icon" />
-					<span class="hero__list-text"
-						>Доставка по всей Украине</span
-					>
+					<span class="hero__list-text">Доставка по всей Украине</span>
 				</li>
 			</ul>
 		</div>

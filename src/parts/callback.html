@@ -4,7 +4,7 @@
             <h2 class="callback__title">
                 Мы все расскажем и поможем. <span>Просто оставьте заявку</span>
             </h2>
-            <form action="./php/sendCallback.php" enctype="multipart/form-data" id="callback-form" method="POST"
+            <form action="./php/sendCallback.php" autocomplete="off" enctype="multipart/form-data" method="POST"
                 accept-charset="UTF-8">
                 <div class="callback__form">
                     <div class="callback__form-phone">
@@ -12,8 +12,7 @@
                             class="phone-callback">
                     </div>
 
-                    <button type="submit" class="btn hero__btn" id="callback-btn"
-                        form="callback-form">Консультация</button>
+                    <button type="submit" class="btn hero__btn callback-btn" form="callback-form">Консультация</button>
                 </div>
                 <span class="error-phone-callback error">Введите правильный номер телефона</span>
             </form>

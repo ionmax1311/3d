@@ -6,18 +6,11 @@ $(".btn-calculate").click(function () {
   let selectColorVal = $(".selectColor-val").val();
   let selectQualityVal = $(".selectQuality-val").val();
   let fileLink = $(".input-link").val();
-  // if (!fileVal) {
-  //   console.log("file-false");
-  //   fileVal = $(".input-link").val();
-  // } else {
-  //   console.log("file-true", fileVal);
-  // }
 
   let phoneCalculate = $("#phone-calculate").val();
 
   let regex = /^(66|95|99|50|67|68|96|97|98|63|73|93|39|91|92|94)\d{7}$/;
 
-  //result.html(regex.test(input));
   if (phoneCalculate.match(regex)) {
     $(".error-phone-calculate").css("display", "none");
     $(".preloader").addClass("active");
@@ -38,8 +31,6 @@ $(".btn-calculate").click(function () {
       data: formData,
       processData: false,
       contentType: false,
-      // dataType: "json",
-      // contentType: "application/json;charset=utf-8",
       error: function () {
         $(thistarget).html("Error: Failed to submit form!");
         $(".preloader").removeClass("active");
