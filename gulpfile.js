@@ -4,7 +4,7 @@ const csso = require("gulp-csso");
 const include = require("gulp-file-include");
 const htmlmin = require("gulp-htmlmin");
 const del = require("del");
-// const imagemin = require("gulp-imagemin");
+let uglify = require("gulp-uglify-es").default;
 const concat = require("gulp-concat");
 const autoprefixer = require("gulp-autoprefixer");
 const sourcemaps = require("gulp-sourcemaps");
@@ -49,7 +49,10 @@ function fonts() {
 }
 
 function script() {
-  return src("src/js/**.js").pipe(concat("index.js")).pipe(dest("dist"));
+  return src("src/js/**.js")
+    .pipe(concat("index.js"))
+    .pipe(uglify())
+    .pipe(dest("dist"));
 }
 
 function clear() {
