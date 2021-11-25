@@ -303,6 +303,15 @@ $(".logo").click(function () {
   );
 });
 
+$(".callback-scroll").click(function () {
+  $("html, body").animate(
+    {
+      scrollTop: $("#callback").offset().top - 100,
+    },
+    1000
+  );
+});
+
 $(".success-btn").click(function () {
   window.location.replace("/index.html");
 });
