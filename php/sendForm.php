@@ -50,7 +50,7 @@ try {
     $mail->setFrom('***', '3D - печать'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('wow.work1311@gmail.com');
+    $mail->addAddress('***');
 
     // Прикрипление файлов к письму
     if (isset($_FILES['file'])) {
