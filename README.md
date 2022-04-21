@@ -2,4 +2,4 @@
 
 https://ionmax1311.github.io/3d/dist/
 
-## **html + scss + gulp + php + wordpress**
+## **html + scss + bootstrap-4 + gulp + php + wordpress**
